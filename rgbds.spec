@@ -30,7 +30,7 @@ It consists of:
 
 %build
 %cmake
-%cmake_build
+%make_build
 
 %install
 %make_install -C build
