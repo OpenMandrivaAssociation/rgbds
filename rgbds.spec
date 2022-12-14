@@ -35,6 +35,9 @@ It consists of:
 %install
 %make_install -C build
 
+rm -f %{buildroot}/build/BUILD/rgbds-%{version}/test/gfx/randtilegen
+rm -f %{buildroot}/build/BUILD/rgbds-%{version}/test/gfx/rgbgfx_test
+
 %files
 %{_bindir}/rgbasm
 %{_bindir}/rgblink
