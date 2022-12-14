@@ -8,7 +8,7 @@ License:	DWPL and ISC and MIT and BSD
 URL:		https://github.com/gbdev/%{name}
 Source0:	https://github.com/gbdev/rgbds/archive/v%{version}/%{name}-%{version}.tar.gz
 
-BuildRequires:	make
+BuildRequires:	cmake
 BuildRequires:	byacc
 BuildRequires:	bison
 BuildRequires:	flex
@@ -29,10 +29,14 @@ It consists of:
 %autosetup -p1
 
 %build
-%make_build Q="" CFLAGS="%{optflags}"
+%cmake
+%make_build
 
 %install
-%make_install PREFIX=%{_prefix} bindir=%{_bindir} mandir=%{_mandir} STRIP="-p" MANMODE="644 -p" Q=""
+%make_install -C build
+
+rm -f %{buildroot}/build/BUILD/rgbds-%{version}/test/gfx/randtilegen
+rm -f %{buildroot}/build/BUILD/rgbds-%{version}/test/gfx/rgbgfx_test
 
 %files
 %{_bindir}/rgbasm
@@ -50,3 +54,6 @@ It consists of:
 %{_mandir}/man7/gbz80.7.*
 %license LICENSE
 %doc README.rst
+
+%exclude /builddir/build/BUILD/rgbds-0.6.1/test/gfx/randtilegen
+%exclude /builddir/build/BUILD/rgbds-0.6.1/test/gfx/rgbgfx_test
