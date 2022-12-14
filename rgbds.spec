@@ -8,7 +8,7 @@ License:	DWPL and ISC and MIT and BSD
 URL:		https://github.com/gbdev/%{name}
 Source0:	https://github.com/gbdev/rgbds/archive/v%{version}/%{name}-%{version}.tar.gz
 
-BuildRequires:	make
+BuildRequires:	cmake
 BuildRequires:	byacc
 BuildRequires:	bison
 BuildRequires:	flex
@@ -29,10 +29,11 @@ It consists of:
 %autosetup -p1
 
 %build
-%make_build Q="" CFLAGS="%{optflags}"
+%cmake
+%cmake_build
 
 %install
-%make_install PREFIX=%{_prefix} bindir=%{_bindir} mandir=%{_mandir} STRIP="-p" MANMODE="644 -p" Q=""
+%make_install -C build
 
 %files
 %{_bindir}/rgbasm
