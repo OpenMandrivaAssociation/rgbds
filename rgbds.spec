@@ -54,3 +54,6 @@ rm -f %{buildroot}/build/BUILD/rgbds-%{version}/test/gfx/rgbgfx_test
 %{_mandir}/man7/gbz80.7.*
 %license LICENSE
 %doc README.rst
+
+%exclude /builddir/build/BUILD/rgbds-0.6.1/test/gfx/randtilegen
+%exclude /builddir/build/BUILD/rgbds-0.6.1/test/gfx/rgbgfx_test
