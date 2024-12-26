@@ -44,6 +44,7 @@ It consists of:
 %{_mandir}/man1/rgblink.1.*
 %{_mandir}/man1/rgbfix.1.*
 %{_mandir}/man1/rgbgfx.1.*
+%{_mandir}/man5/rgbasm-old.5.*
 %{_mandir}/man5/rgbds.5.*
 %{_mandir}/man5/rgbasm.5.*
 %{_mandir}/man5/rgblink.5.*
