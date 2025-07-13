@@ -1,5 +1,5 @@
 Name:		rgbds
-Version:	0.9.2
+Version:	0.9.3
 Release:	1
 Summary:	A development package for the Game Boy, including an assembler
 
